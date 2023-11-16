@@ -11,28 +11,29 @@ class CheapWidget extends StatelessWidget {
     final cheapObject = context.select<ObjectProvider, CheapObject>(
       (provider) => provider.cheapObject,
     );
-    return Container(
-      height: 100,
-      width: 100,
-      color: Colors.blueAccent.shade200,
-      child: Column(
-        children: [
-          const Center(
-            child: Text(
+    return Padding(
+      padding: const EdgeInsets.only(top:8.0, left: 8.0),
+      child: Container(
+        height: 150,
+        width: 150,
+        color: Colors.blueAccent.shade200,
+        child: Column(
+          children: [
+            const Text(
               "Cheap Widget",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
             ),
-          ),
-          const SizedBox(height: 15),
-          const Text("Last Updated: "),
-          const SizedBox(height: 15),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(cheapObject.lastUpdated),
-          ),
-        ],
+            const SizedBox(height: 15),
+            const Text("Last Updated: "),
+            const SizedBox(height: 15),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(cheapObject.lastUpdated),
+            ),
+          ],
+        ),
       ),
     );
   }

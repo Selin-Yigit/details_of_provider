@@ -14,28 +14,29 @@ class ExpensiveWidget extends StatelessWidget {
     final expensiveObject = context.select<ObjectProvider, ExpensiveObject>(
       (provider) => provider.expensiveObject,
     );
-    return Container(
-      height: 100,
-      width: 100,
-      color: Colors.amberAccent.shade200,
-      child: Column(
-        children: [
-          const Center(
-            child: Text(
+    return Padding(
+      padding: const EdgeInsets.only(top: 8.0, right: 8.0, left: 8.0),
+      child: Container(
+        height: 150,
+        width: 150,
+        color: Colors.amberAccent.shade200,
+        child: Column(
+          children: [
+            const Text(
               "Expensive Widget",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
             ),
-          ),
-          const SizedBox(height: 15),
-          const Text("Last Updated: "),
-          const SizedBox(height: 15),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(expensiveObject.lastUpdated),
-          ),
-        ],
+            const SizedBox(height: 15),
+            const Text("Last Updated: "),
+            const SizedBox(height: 15),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(expensiveObject.lastUpdated),
+            ),
+          ],
+        ),
       ),
     );
   }

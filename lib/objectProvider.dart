@@ -21,7 +21,9 @@ class ObjectProvider extends ChangeNotifier {
   ObjectProvider()
       : id = const Uuid().v4(),
         _cheapObject = CheapObject(),
-        _expensiveObject = ExpensiveObject();
+        _expensiveObject = ExpensiveObject() {
+    Start();// stream başlatıldı.
+  }
 
   @override
   void notifyListeners() {
